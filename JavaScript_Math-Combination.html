@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combination Scenarios</title>
+</head>
+<body>
+    <h2>Combination Calculation Scenarios</h2>
+
+    <h3>Case 1: X > Y (Example: X = 7, Y = 4)</h3>
+    <p id="result1"></p>
+
+    <h3>Case 2: Y > X (Example: X = 3, Y = 5)</h3>
+    <p id="result2"></p>
+
+    <h3>Case 3: X = Y (Example: X = 6, Y = 6)</h3>
+    <p id="result3"></p>
+
+    <script>
+        // Function to calculate factorial
+        function factorial(n) {
+            let result = 1;
+            for (let i = 1; i <= n; i++) {
+                result *= i;
+            }
+            return result;
+        }
+
+        // Function to calculate combination (n C r)
+        function combination(n, r) {
+            if (r > n) return 0; // Combination is not defined if r > n
+            return factorial(n) / (factorial(r) * factorial(n - r));
+        }
+
+        // Case 1: X > Y
+        let X1 = 7, Y1 = 4;
+        let result1 = combination(X1, Y1);
+        document.getElementById("result1").innerText = `For X = 7 and Y = 4, X C Y is: ${result1}`;
+
+        // Case 2: Y > X
+        let X2 = 3, Y2 = 5;
+        let result2 = combination(Y2, X2);
+        document.getElementById("result2").innerText = `For X = 3 and Y = 5, Y C X is: ${result2}`;
+
+        // Case 3: X = Y
+        let X3 = 6, Y3 = 6;
+        let result3 = combination(X3 + 1, Y3);
+        document.getElementById("result3").innerText = `For X = 6 and Y = 6, (X + 1) C Y is: ${result3}`;
+    </script>
+</body>
+</html>
