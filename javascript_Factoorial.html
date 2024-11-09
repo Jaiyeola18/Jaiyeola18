@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial of 39</title>
+</head>
+<body>
+    <h2>Factorial Calculation</h2>
+    <p id="factorialResult"></p>
+
+    <script>
+        // Variables for factorial calculation
+        let X = 39;
+        let Y = 1; // Initial value for the product
+
+        // Calculate the factorial of X
+        for (let i = 1; i <= X; i++) {
+            Y *= i;
+        }
+
+        // Display the result
+        document.getElementById("factorialResult").innerText = "The factorial of 39 is: " + Y;
+    </script>
+</body>
+</html>
